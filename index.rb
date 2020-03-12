@@ -59,6 +59,8 @@ end
 def save_selection_history
     puts "To save your travel info, select 1."
     puts "To access travel history, select 2."
+    print "> "
+    preferred_selection_option = gets.chomp.to_i
 
  
 visiting_country = country_selector
