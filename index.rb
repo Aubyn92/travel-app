@@ -1,5 +1,5 @@
 require_relative "data.rb"
-require "pry"
+
 
 def country_selector
     puts "Which country are you visiting?"
@@ -12,7 +12,7 @@ def country_selector
         return country_data
     else
         puts "Sorry, you can't go to that country."
-        exit
+        return country_selector
     end
 end
 
@@ -24,7 +24,7 @@ def currency_conversion(country_data)
         new_amount = aud_amount * rate
         puts "You have $#{sprintf('%.2f', new_amount)} in your new currency."
     else 
-        puts "Sorry, we dont have their money."
+        puts "Sorry, we don't have their money."
     end
 end 
 
@@ -43,8 +43,8 @@ def city_selector(country_data)
         end 
     end 
 
-    sleep 1
     puts "And accommodation ..."  
+    sleep 1
     puts "Select your preferred option."
     puts "1. Closest proximity to airport"
     puts "2. Overall highest rating"
@@ -53,8 +53,12 @@ def city_selector(country_data)
     preferred_accomodation_option = gets.chomp.to_i  
     # 1, 2, 3
     puts chosen_city[:accommodation][preferred_accomodation_option - 1]
-    # => "Little Charm Hanoi"
+
 end
+
+def save_selection_history
+    puts "To save your travel info, select 1."
+    puts "To access travel history, select 2."
 
  
 visiting_country = country_selector
