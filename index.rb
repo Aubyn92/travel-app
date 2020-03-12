@@ -12,7 +12,7 @@ def country_selector
         return country_data
     else
         puts "Sorry, you can't go to that country."
-        return nil
+        exit
     end
 end
 
@@ -42,8 +42,9 @@ def city_selector(country_data)
             end
         end 
     end 
-    puts "And accommodation ..."  
+
     sleep 1
+    puts "And accommodation ..."  
     puts "Select your preferred option."
     puts "1. Closest proximity to airport"
     puts "2. Overall highest rating"
